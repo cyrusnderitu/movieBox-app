@@ -5,6 +5,7 @@ export const MovieContext = createContext();
 
 const MovieContextProvider = ({ children }) => {
   const { data, isLoading } = useDataFetcher();
+
   return (
     <MovieContext.Provider value={{ isLoading, data }}>
       {children}

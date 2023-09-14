@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useDataFetcher = () => {
@@ -7,7 +6,9 @@ const useDataFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get();
+        const res = await fetch(
+          "https://api.themoviedb.org/3/discover/movie?api_key=692a2e9f65639e9f0203cfb13947ad8b"
+        );
         const data = await res.json();
         setData(data);
       } catch (error) {
