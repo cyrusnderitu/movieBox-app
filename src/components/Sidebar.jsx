@@ -31,19 +31,28 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li className="hover:bg-[#fcc4d2] cursor-pointer w-full py-2">
-                <Link className="w-full mx-8 flex items-center gap-x-2">
+                <Link
+                  to={"/"}
+                  className="w-full mx-8 flex items-center gap-x-2"
+                >
                   <BiCameraMovie />
                   Movies
                 </Link>
               </li>
               <li className="hover:bg-[#fcc4d2] cursor-pointer w-full py-2">
-                <Link className="w-full mx-8 flex items-center gap-x-2">
+                <Link
+                  to={"/"}
+                  className="w-full mx-8 flex items-center gap-x-2"
+                >
                   <PiTelevisionBold />
                   TV Series
                 </Link>
               </li>
               <li className="hover:bg-[#fcc4d2] cursor-pointer w-full py-2">
-                <Link className="w-full mx-8 flex items-center gap-x-2">
+                <Link
+                  to={"/"}
+                  className="w-full mx-8 flex items-center gap-x-2"
+                >
                   <BsCalendar3 />
                   Upcoming
                 </Link>

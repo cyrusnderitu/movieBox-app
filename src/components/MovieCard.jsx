@@ -1,34 +1,42 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import tomato from "../Assets/tomato.png";
 import IMDB from "../Assets/imdb.png";
 // import Skeleton from "react-loading-skeleton";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
+  const movieContent = useRef(movie);
   const handleNavigate = () => {
-    navigate("/movie/Stanger");
+    navigate(`/movie/${movie.original_title}`, { state: movieContent.current });
+  };
+  const [fav, setFav] = useState(false);
+  const handleFav = () => {
+    setFav(!fav);
   };
   return (
-    <div
-      className="flex flex-col shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer"
-      onClick={handleNavigate}
-    >
+    <div className="flex flex-col shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer relative">
       <div
-        className="top h-[250px] bg-cover bg-top bg-no-repeat bg-slate-500"
+        className="top flex-1 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/w300${movie?.poster_path})`,
         }}
       >
-        {/* <img
-          src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
-          alt="poster"
-          className="object-contain h-[200px]"
-        /> */}
+        <span
+          className="fav absolute top-4 right-4 bg-gray-300 cursor-pointer rounded-[50%] text-black p-1"
+          onClick={handleFav}
+        >
+          {fav === true ? (
+            <AiFillHeart className="text-xl fill-yellow-500" />
+          ) : (
+            <AiOutlineHeart className="text-xl" />
+          )}
+        </span>
       </div>
-      <div className="bottom p-4 block flex-2">
+      <div className="bottom p-4 block flex-2" onClick={handleNavigate}>
         <span>USA, 2016 Current</span>
-        <h4 className="text-md">{movie?.original_title}</h4>
+        <h4 className="text-md">{movie?.title}</h4>
         <div className="flex items-center justify-between text-[12px]">
           <div className="imdb flex flex-row items-center gap-x-2">
             <img src={IMDB} alt="imdb" className="w-[40%]" />

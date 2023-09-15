@@ -22,15 +22,6 @@ const Hero = () => {
         autoplay={{ delay: 3000 }}
         className="w-full h-full"
       >
-        {/* {Array(4)
-          .fill(1)
-          .map((_items, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Slider />
-              </SwiperSlide>
-            );
-          })} */}
         {data?.results.slice(0, 5).map((movie, index) => {
           return (
             <SwiperSlide key={index}>

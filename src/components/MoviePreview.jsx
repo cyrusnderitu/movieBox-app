@@ -1,15 +1,25 @@
 import React from "react";
 import { BsStar } from "react-icons/bs";
+import Skeleton from "react-loading-skeleton";
+import { useLocation } from "react-router-dom";
 const MoviePreview = () => {
+  const location = useLocation();
+  const year = location?.state.release_date.split("-");
   return (
     <div className="flex-1 px-10 py-4">
       <div className="flex flex-col gap-y-2 h-full">
         <div className="flex-1 h-[60%]">
-          <video src="" className="h-[90%]"></video>
-          <div className="flex justify-between items-center">
-            <div className="flex items-center justify-center gap-x-4 bg-slate-200">
-              <h4>Top Gun Maverick</h4>
-              <p>2022</p>
+          <div className="overflow-hidden h-[80%] rounded-md">
+            <img
+              src={`https://image.tmdb.org/t/p/original${location?.state.backdrop_path}`}
+              alt="vide_bg"
+              className="w-[full] object-fit"
+            />
+          </div>
+          <div className="flex justify-between items-center my-4">
+            <div className="flex items-center justify-center gap-x-4">
+              <h4 className="font-bold text-xl">{location?.state.title}</h4>
+              <p>{year[0]}</p>
               <p>PG-13</p>
               <div className="cat flex items-center gap-x-3">
                 <span className="w-fit border border-1 rounded-md p-1 border-gray-300 text-sm text-[#be123c]">
@@ -23,7 +33,10 @@ const MoviePreview = () => {
             <div className="flex items-center gap-x-2">
               <BsStar />
               <p>
-                <span className="text-gray-200 text-lg">8.5</span> | 350k
+                <span className="text-gray-400 text-lg">
+                  {location?.state.vote_average}
+                </span>{" "}
+                | 350k
               </p>
             </div>
           </div>
@@ -32,12 +45,7 @@ const MoviePreview = () => {
           <div className="flex gap-x-4">
             <div className="flex-1">
               <div className="flex flex-col gap-y-4">
-                <p>
-                  After thirty years, Maverick is still pushing the envelope as
-                  a top naval aviator, but must confront ghosts of his past when
-                  he leads TOP GUN's ellite graduates on a mission that demands
-                  the ultimate sacrificce from those chosen to fly it
-                </p>
+                <p>{location?.state.overview || <Skeleton />}</p>
                 <div className="">
                   <p>
                     Director:{" "}
@@ -56,11 +64,11 @@ const MoviePreview = () => {
                     </span>
                   </p>
                 </div>
-                <div className="flex border border-1 border-gray-200 w-[50%] overflow-hidden rounded-md">
+                <div className="flex border border-1 border-gray-200 w-[75%] overflow-hidden rounded-md pr-4">
                   <button className="text-white bg-[#be123c] p-2">
                     Top rated movie #65
                   </button>
-                  <select className="border-none p-2">
+                  <select className="border-none p-2  w-full outline-none">
                     <option value="">Awards 9 nominations</option>
                   </select>
                 </div>

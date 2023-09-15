@@ -14,7 +14,7 @@ const Slider = ({ movie }) => {
     >
       <div className="align-left gap flex flex-col gap-y-4">
         <h1 className="text-white text-4xl font-semibold w-1/2">
-          {movie.original_title}
+          {movie.title}
         </h1>
         <div className="rating flex items-center gap-x-[10rem]">
           <div className="imdb flex items-center gap-x-2">
