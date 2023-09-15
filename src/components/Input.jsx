@@ -16,7 +16,7 @@ const Input = () => {
     setTitle("");
   };
   return (
-    <div className="search flex items-center justify-between border-2 border-white rounded-lg w-[50%] px-4 py-1">
+    <div className="search flex items-center justify-between border-2 border-white rounded-lg w-[50%] xs:px-2 md:px-4 md:py-1">
       <form
         className="border-none bg-trasnparent w-full"
         onSubmit={handleSubmit}
@@ -27,10 +27,10 @@ const Input = () => {
           value={title}
           onChange={handleChange}
           placeholder="What do you want to watch ?"
-          className=" indent-2 border-none bg-transparent outline-none placeholder:text-white w-full text-white"
+          className=" indent-2 border-none xs:placeholder:text-[11px] md:placeholder:text-[14px] lg:placeholder:text-lg bg-transparent outline-none placeholder:text-white w-full text-white"
         />
       </form>
-      <BiSearch className="text-white" />
+      <BiSearch className="text-white md:block xs:hidden" />
     </div>
   );
 };

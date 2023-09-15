@@ -21,7 +21,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className=" flex items-center gap-x-10 my-6">
+        <div className=" flex md:flex-row xs:flex-col gap-y-4 items-center gap-x-10 my-6">
           <span className="font-semibold text-black">Conditions of Use</span>
           <span className="font-semibold text-black">Privacy & Policy</span>
           <span className="font-semibold text-black">Press Room</span>

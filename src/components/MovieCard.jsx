@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
     setFav(!fav);
   };
   return (
-    <div className="flex flex-col shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer relative">
+    <div className="flex flex-col xs:text-[14px] shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer relative">
       <div
         className="top flex-1 bg-cover bg-center bg-no-repeat"
         style={{
@@ -36,7 +36,7 @@ const MovieCard = ({ movie }) => {
       </div>
       <div className="bottom p-4 block flex-2" onClick={handleNavigate}>
         <span>USA, 2016 Current</span>
-        <h4 className="text-md">{movie?.title}</h4>
+        <h4 className="md:text-md">{movie?.title}</h4>
         <div className="flex items-center justify-between text-[12px]">
           <div className="imdb flex flex-row items-center gap-x-2">
             <img src={IMDB} alt="imdb" className="w-[40%]" />

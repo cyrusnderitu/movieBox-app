@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import useSearchFetcher from "../hooks/useSearchFetcher";
 import { useParams } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
+import Footer from "../components/Footer/Footer";
 
 const Search = () => {
   const { title } = useParams();
@@ -19,6 +20,7 @@ const Search = () => {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

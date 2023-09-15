@@ -11,12 +11,14 @@ const Navbar = () => {
         className="logo flex items-center gap-x-2 hover:cursor-pointer"
         onClick={() => navigate("/")}
       >
-        <img src={logo} alt="logo" className="w-[25%]" />
-        <h2 className="text-white text-2xl font-semibold">MovieBox</h2>
+        <img src={logo} alt="logo" className="xs:w-[30px] md:w-[50px]" />
+        <h2 className="text-white md:text-lg lg:text-xl font-semibold xs:hidden md:block">
+          MovieBox
+        </h2>
       </div>
       <Input />
       <div className="account text-white">
-        <p className="font-600">Sign in</p>
+        <p className="font-600 xs:text-[12px] md:text-[16px]">Sign in</p>
       </div>
     </div>
   );

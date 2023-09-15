@@ -9,7 +9,7 @@ import { AiFillHome } from "react-icons/ai";
 const Sidebar = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex h-full">
+    <div className="flex h-full md:text-[13px] lg:text-[15px]">
       <div className="flex-2 w-[200px] border-2 rounded-tr-[20px] rounded-br-[20px] p-4">
         <div className="flex flex-col justify-between items-center h-full">
           <div

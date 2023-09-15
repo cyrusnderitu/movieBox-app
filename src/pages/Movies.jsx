@@ -5,10 +5,10 @@ const Movies = () => {
   return (
     <div className="h-full">
       <div className="flex">
-        <div className="fixed h-screen">
+        <div className="md:fixed md:block h-screen xs:hidden">
           <Sidebar />
         </div>
-        <div className="ml-[200px]">
+        <div className="md:ml-[200px]">
           <MoviePreview />
         </div>
       </div>

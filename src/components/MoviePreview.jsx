@@ -6,7 +6,7 @@ const MoviePreview = () => {
   const location = useLocation();
   const year = location?.state.release_date.split("-");
   return (
-    <div className="flex-1 px-10 py-4">
+    <div className="flex-1 px-10 py-4 xs:text-[10px]">
       <div className="flex flex-col gap-y-2 h-full">
         <div className="flex-1 h-[60%]">
           <div className="overflow-hidden h-[80%] rounded-md">
@@ -16,24 +16,26 @@ const MoviePreview = () => {
               className="w-[full] object-fit"
             />
           </div>
-          <div className="flex justify-between items-center my-4">
-            <div className="flex items-center justify-center gap-x-4">
+          <div className="flex xs:flex-col md:flex-row justify-between items-center my-4">
+            <div className="flex xs:flex-col lg:flex-row md:items-start xs:items-center lg:items-center md:justify-center gap-x-4">
               <h4 className="font-bold text-xl">{location?.state.title}</h4>
-              <p>{year[0]}</p>
-              <p>PG-13</p>
-              <div className="cat flex items-center gap-x-3">
-                <span className="w-fit border border-1 rounded-md p-1 border-gray-300 text-sm text-[#be123c]">
-                  Action
-                </span>
-                <span className="w-fit border border-1 rounded-md p-1 border-gray-300 text-sm text-[#be123c]">
-                  Drama
-                </span>
+              <div className="flex gap-x-2 items-center">
+                <p>{year[0]}</p>
+                <p>PG-13</p>
+                <div className="cat flex items-center gap-x-3">
+                  <span className="w-fit border border-1 rounded-md p-1 border-gray-300 md:before:text-sm text-[#be123c]">
+                    Action
+                  </span>
+                  <span className="w-fit border border-1 rounded-md p-1 border-gray-300 md:before:text-sm text-[#be123c]">
+                    Drama
+                  </span>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-x-2">
               <BsStar />
               <p>
-                <span className="text-gray-400 text-lg">
+                <span className="text-gray-400 xs:text-[14px] lg:text-lg">
                   {location?.state.vote_average}
                 </span>{" "}
                 | 350k
@@ -42,9 +44,9 @@ const MoviePreview = () => {
           </div>
         </div>
         <div className="flex-2 h-[40%]">
-          <div className="flex gap-x-4">
+          <div className="flex xs:flex-col-reverse lg:flex-row gap-x-4">
             <div className="flex-1">
-              <div className="flex flex-col gap-y-4">
+              <div className="flex flex-col gap-y-4 xs:text-[10px]">
                 <p>{location?.state.overview || <Skeleton />}</p>
                 <div className="">
                   <p>
@@ -74,14 +76,16 @@ const MoviePreview = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-2 w-[250px]">
-              <button className="bg-[#be123c] text-white p-2 rounded-md w-full">
-                See Showtimes
-              </button>
-              <button className="bg-[#f296ad] p-2 rounded-md mt-3 w-full">
-                More watch options
-              </button>
-              <div className="w-full h-200px rounded-lg"></div>
+            <div className="flex-2 md:w-[250px] xs:w-full">
+              <div className="flex xs:flex-row lg:flex-col gap-2 mb-4">
+                <button className="bg-[#be123c] text-white p-2 rounded-md md:w-full xs:w-fit">
+                  See Showtimes
+                </button>
+                <button className="bg-[#f296ad] p-2 rounded-md md:w-full xs:w-fit">
+                  More watch options
+                </button>
+              </div>
+              <div className="w-full h-200px rounded-lg xs:hidden md:block"></div>
             </div>
           </div>
         </div>

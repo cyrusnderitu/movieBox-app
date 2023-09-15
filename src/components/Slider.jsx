@@ -12,8 +12,8 @@ const Slider = ({ movie }) => {
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
       }}
     >
-      <div className="align-left gap flex flex-col gap-y-4">
-        <h1 className="text-white text-4xl font-semibold w-1/2">
+      <div className="align-left gap flex flex-col gap-y-4 xs:text-[14px]">
+        <h1 className="text-white md:text-4xl xs:text-2xl font-semibold md:w-1/2 sm:w-[80%]">
           {movie.title}
         </h1>
         <div className="rating flex items-center gap-x-[10rem]">
@@ -26,10 +26,12 @@ const Slider = ({ movie }) => {
             <p>97%</p>
           </div>
         </div>
-        <div className="description w-2/5">{movie.overview}</div>
+        <div className="description md:w-3/2 lg:w-2/5 sm:w-[80%]">
+          {movie.overview}
+        </div>
         <div className="button cursor-pointer border-none w-fit py-2 px-4 flex items-center gap-2 bg-[#BE123C] rounded-lg">
-          <FiPlayCircle className="fill-[#BE123C] text-2xl" />
-          <button className="border-none outline-none font-bold text-md">
+          <FiPlayCircle className="fill-[#BE123C] xs:text-md md:text-2xl" />
+          <button className="border-none outline-none font-bold xs:text-[12px] md:text-md">
             WATCH TRAILER
           </button>
         </div>
