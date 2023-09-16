@@ -16,12 +16,16 @@ const MovieCard = ({ movie }) => {
     setFav(!fav);
   };
   return (
-    <div className="flex flex-col xs:text-[14px] shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer relative">
+    <div
+      className="flex flex-col xs:text-[14px] shadow-md overflow-hidden rounded-sm h-[350px] hover:cursor-pointer relative"
+      data-testid="movie-card"
+    >
       <div
         className="top flex-1 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/w300${movie?.poster_path})`,
         }}
+        data-testid="movie-poster"
       >
         <span
           className="fav absolute top-4 right-4 bg-gray-300 cursor-pointer rounded-[50%] text-black p-1"
@@ -36,7 +40,9 @@ const MovieCard = ({ movie }) => {
       </div>
       <div className="bottom p-4 block flex-2" onClick={handleNavigate}>
         <span>USA, 2016 Current</span>
-        <h4 className="md:text-md">{movie?.title}</h4>
+        <h4 className="md:text-md" data-tesid="movie-title">
+          {movie?.title}
+        </h4>
         <div className="flex items-center justify-between text-[12px]">
           <div className="imdb flex flex-row items-center gap-x-2">
             <img src={IMDB} alt="imdb" className="w-[40%]" />

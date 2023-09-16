@@ -13,6 +13,7 @@ const useSearchFetcher = (title) => {
         setData(data);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
       } finally {
         setIsLoading(false);
       }

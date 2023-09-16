@@ -27,7 +27,7 @@ const Input = () => {
           value={title}
           onChange={handleChange}
           placeholder="What do you want to watch ?"
-          className=" indent-2 border-none xs:placeholder:text-[11px] md:placeholder:text-[14px] lg:placeholder:text-lg bg-transparent outline-none placeholder:text-white w-full text-white"
+          className=" indent-2 border-none xs:placeholder:text-[11px]  lg:placeholder:text-[16px] bg-transparent outline-none placeholder:text-white w-full text-white"
         />
       </form>
       <BiSearch className="text-white md:block xs:hidden" />

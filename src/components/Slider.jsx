@@ -7,7 +7,7 @@ import IMDB from "../Assets/imdb.png";
 const Slider = ({ movie }) => {
   return (
     <div
-      className="heroImg absolute top-0 w-full h-full bg-no-repeat text-white bg-cover px-16 flex flex-col justify-center"
+      className="heroImg absolute top-0 w-full h-full bg-no-repeat text-white bg-cover xs:px-8 md:px-16 flex flex-col justify-center"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
       }}
@@ -26,7 +26,7 @@ const Slider = ({ movie }) => {
             <p>97%</p>
           </div>
         </div>
-        <div className="description md:w-3/2 lg:w-2/5 sm:w-[80%]">
+        <div className="description md:w-3/2 lg:w-1/2 sm:w-[80%]">
           {movie.overview}
         </div>
         <div className="button cursor-pointer border-none w-fit py-2 px-4 flex items-center gap-2 bg-[#BE123C] rounded-lg">

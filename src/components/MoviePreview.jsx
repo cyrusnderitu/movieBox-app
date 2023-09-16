@@ -18,10 +18,15 @@ const MoviePreview = () => {
           </div>
           <div className="flex xs:flex-col md:flex-row justify-between items-center my-4">
             <div className="flex xs:flex-col lg:flex-row md:items-start xs:items-center lg:items-center md:justify-center gap-x-4">
-              <h4 className="font-bold text-xl">{location?.state.title}</h4>
+              <h4 className="font-bold text-xl" data-testid="movie-title">
+                {location?.state.title}
+              </h4>
               <div className="flex gap-x-2 items-center">
-                <p>{year[0]}</p>
+                <p data-testid="movie-release-date">{year[0]}</p>
                 <p>PG-13</p>
+                <span className="" data-testid="movie-release-date">
+                  130min
+                </span>
                 <div className="cat flex items-center gap-x-3">
                   <span className="w-fit border border-1 rounded-md p-1 border-gray-300 md:before:text-sm text-[#be123c]">
                     Action
@@ -47,7 +52,9 @@ const MoviePreview = () => {
           <div className="flex xs:flex-col-reverse lg:flex-row gap-x-4">
             <div className="flex-1">
               <div className="flex flex-col gap-y-4 xs:text-[10px]">
-                <p>{location?.state.overview || <Skeleton />}</p>
+                <p data-testid="movie-overview">
+                  {location?.state.overview || <Skeleton />}
+                </p>
                 <div className="">
                   <p>
                     Director:{" "}
