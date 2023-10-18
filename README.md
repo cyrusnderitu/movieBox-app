@@ -1,4 +1,4 @@
-# MOVIE SITE APPLICATION
+# Movie Application
 A sample representation of how the movie project looks like: 
 
 # Video
